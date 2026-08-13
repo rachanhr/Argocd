@@ -24,7 +24,7 @@ Before using this GitHub Actions workflow, make sure you have:
 
 1. A **Docker Hub account** and created a repo (e.g., `dockerhub_username/guestbook`).
 2. An **ArgoCD setup** in your Kubernetes cluster.
-3. A **GitOps manifests repository** (e.g., `udemykcloud/Argocd`) where your Kustomize overlays are stored.
+3. A **GitOps manifests repository** (e.g., `DPP-2026/Argocd`) where your Kustomize overlays are stored.
 4. GitHub **secrets configured**:
    - `DOCKERHUB_USERNAME`
    - `DOCKERHUB_PASSWORD`
@@ -63,7 +63,7 @@ jobs:
       DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
       COMMIT_EMAIL: "github-actions@example.com"
       COMMIT_NAME: "GitHub Actions"
-      MANIFESTS_REPO: "udemykcloud/Argocd"
+      MANIFESTS_REPO: "DPP-2026/Argocd"
 
     steps:
     - name: Checkout Staging Branch

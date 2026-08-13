@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: guestbook
+  namespace: argocd
+spec:
+  description: Guestbook lab project — dev, staging, prod on single cluster
+  sourceRepos:
+    - https://github.com/DPP-2026/Argocd.git
+  destinations:
+    - namespace: dev
+      server: https://kubernetes.default.svc
+    - namespace: staging
+      server: https://kubernetes.default.svc
+    - namespace: prod
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: argoproj.io
+      kind: Rollout
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"

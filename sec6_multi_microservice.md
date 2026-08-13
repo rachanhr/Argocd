@@ -382,7 +382,7 @@ metadata:
 spec:
   description: Project for test repo with all clusters and namespaces allowed
   sourceRepos:
-    - https://github.com/udemykcloud/Argocd.git
+    - https://github.com/DPP-2026/Argocd.git
   destinations:
     # ✅ Dev-Cluster (us-east-1)
     - namespace: '*'
@@ -408,7 +408,7 @@ metadata:
 spec:
   project: guestbook
   source:
-    repoURL: 'https://github.com/udemykcloud/Argocd.git'
+    repoURL: 'https://github.com/DPP-2026/Argocd.git'
     targetRevision: main
     path: section6/guestbook/base
   destination:
@@ -429,7 +429,7 @@ metadata:
 spec:
   project: guestbook
   source:
-    repoURL: 'https://github.com/udemykcloud/Argocd.git'
+    repoURL: 'https://github.com/DPP-2026/Argocd.git'
     targetRevision: main
     path: section6/guestbook/base
   destination:
@@ -453,7 +453,7 @@ metadata:
 spec:
   project: guestbook
   source:
-    repoURL: 'https://github.com/udemykcloud/Argocd.git'
+    repoURL: 'https://github.com/DPP-2026/Argocd.git'
     targetRevision: main  
     path: section6/moderator/base
   destination:
@@ -475,7 +475,7 @@ metadata:
 spec:
   project: guestbook
   source:
-    repoURL: 'https://github.com/udemykcloud/Argocd.git'
+    repoURL: 'https://github.com/DPP-2026/Argocd.git'
     targetRevision: main  
     path: section6/moderator/base
   destination:
@@ -534,7 +534,7 @@ spec:
     spec:
       project: guestbook
       source:
-        repoURL: 'https://github.com/udemykcloud/Argocd.git'
+        repoURL: 'https://github.com/DPP-2026/Argocd.git'
         targetRevision: main
         path: '{{path}}'
       destination:
@@ -598,7 +598,7 @@ metadata:
 spec:
   project: guestbook
   source:
-    repoURL: 'https://github.com/udemykcloud/Argocd.git'
+    repoURL: 'https://github.com/DPP-2026/Argocd.git'
     targetRevision: main
     path: section6/guestbook/helm
     helm:
@@ -625,7 +625,7 @@ metadata:
 spec:
   project: guestbook
   source:
-    repoURL: 'https://github.com/udemykcloud/Argocd.git'
+    repoURL: 'https://github.com/DPP-2026/Argocd.git'
     targetRevision: main
     path: section6/guestbook/helm
     helm:
@@ -775,7 +775,7 @@ metadata:
 spec:
   project: guestbook
   source:
-    repoURL: 'https://github.com/udemykcloud/Argocd.git'
+    repoURL: 'https://github.com/DPP-2026/Argocd.git'
     targetRevision: main
     path: section6/guestbook/kustomize/overlays/dev
   destination:
@@ -799,7 +799,7 @@ metadata:
 spec:
   project: guestbook
   source:
-    repoURL: 'https://github.com/udemykcloud/Argocd.git'
+    repoURL: 'https://github.com/DPP-2026/Argocd.git'
     targetRevision: main
     path: section6/guestbook/kustomize/overlays/prod
   destination:
