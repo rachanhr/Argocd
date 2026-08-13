@@ -91,18 +91,74 @@ argocd app list
 Verify workloads:
 
 ```bash
-kubectl get deploy,svc,pods -n dev -l app=guestbook-ui
-kubectl get deploy,svc,pods -n staging -l app=guestbook-ui
-kubectl get deploy,svc,pods -n prod -l app=guestbook-ui
+kubectl get deploy,svc,pods -n dev
+kubectl get deploy,svc,pods -n staging
+kubectl get deploy,svc,pods -n prod
 ```
 
-## Access Guestbook
+Each environment includes **guestbook-ui** (frontend), **redis-leader**, and **redis-follower**. The frontend needs Redis to store messages — without it, Submit does nothing.
+
+## Access Guestbook (ClusterIP Service)
+
+The guestbook `Service` is type **ClusterIP** — it gets an IP reachable **only inside the cluster**, not from your browser directly.
+
+```
+Internet  ✗  →  ClusterIP  ✓  →  Pod (guestbook-ui)
+```
+
+This is normal for internal apps. For the lab, use **kubectl port-forward** to tunnel from your laptop to the service.
+
+### Option 1 — Port forward (recommended for lab)
+
+Run in a separate terminal (keep it open while browsing):
 
 ```bash
+# dev
 kubectl port-forward svc/guestbook-ui -n dev 8081:80
+
+# staging (different terminal or port)
 kubectl port-forward svc/guestbook-ui -n staging 8082:80
+
+# prod
 kubectl port-forward svc/guestbook-ui -n prod 8083:80
 ```
+
+Then open in your browser:
+
+| Environment | URL |
+|-------------|-----|
+| dev | http://localhost:8081 |
+| staging | http://localhost:8082 |
+| prod | http://localhost:8083 |
+
+Verify the service exists first:
+
+```bash
+kubectl get svc guestbook-ui -n dev
+kubectl get pods -n dev -l app=guestbook-ui
+```
+
+### Option 2 — LoadBalancer (optional, AWS cost)
+
+Change the service type to expose via an AWS ELB:
+
+```yaml
+spec:
+  type: LoadBalancer
+```
+
+After sync, get the external URL:
+
+```bash
+kubectl get svc guestbook-ui -n dev
+# use EXTERNAL-IP / hostname from output
+```
+
+> LoadBalancer creates AWS resources and may incur cost. Port-forward is free and sufficient for learning.
+
+### Option 3 — Ingress (advanced, not in this lab)
+
+Production setups often use an Ingress controller (e.g. nginx) with a domain name. Covered in advanced modules.
 
 ## Application Status Indicators
 

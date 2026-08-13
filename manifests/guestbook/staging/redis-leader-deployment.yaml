@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-leader
+  labels:
+    app: redis
+    role: leader
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+      role: leader
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: redis
+        role: leader
+        tier: backend
+    spec:
+      containers:
+        - name: leader
+          image: registry.k8s.io/redis:7.0-alpine
+          ports:
+            - containerPort: 6379
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi

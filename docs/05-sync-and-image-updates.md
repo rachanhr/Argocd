@@ -107,6 +107,8 @@ Expected: 2 running pods in the `dev` namespace.
 
 ### Step 4: Access the UI
 
+ClusterIP is internal-only. Port-forward to your laptop:
+
 ```bash
 kubectl port-forward svc/guestbook-ui -n dev 8081:80
 ```
