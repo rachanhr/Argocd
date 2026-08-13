@@ -140,6 +140,7 @@ kubectl argo rollouts get rollout guestbook-ui --watch
 | App stays `Unknown` | Check repo credentials: `argocd repo list` |
 | App stays `OutOfSync` | Run `argocd app sync guestbook-dev` |
 | `PermissionDenied` | Verify AppProject `destinations` and `sourceRepos` |
+| `Namespace is not permitted in project` | Add `Namespace` to `clusterResourceWhitelist` in `project.yaml` |
 
 ## What You Learned
 

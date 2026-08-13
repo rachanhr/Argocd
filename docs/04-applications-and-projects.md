@@ -40,8 +40,7 @@ kubectl apply -f applications/project.yaml
 |-------|---------|---------------|
 | `sourceRepos` | Whitelist of allowed Git repos | Only this lab repo |
 | `destinations` | Allowed cluster + namespace pairs | `dev`, `staging`, `prod` namespaces |
-| `namespaceResourceWhitelist` | Which K8s resources apps may create | All namespaced resources |
-| `clusterResourceWhitelist` | Cluster-scoped resources allowed | `Rollout` CRD only |
+| `clusterResourceWhitelist` | Cluster-scoped resources allowed | `Namespace`, `Rollout` |
 
 View in UI: **Settings → Projects → guestbook**
 
