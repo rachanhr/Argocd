@@ -3,8 +3,8 @@
 
 # Prerequisite
 
-1.  Install argo cd follow argocd-installation.md
-2.  Install Argo Roll out follow argorollout-installation.md
+1. Install ArgoCD — follow [02-install-argocd.md](02-install-argocd.md)
+2. Install Argo Rollouts — follow [03-install-argo-rollouts.md](03-install-argo-rollouts.md)
 
 
 ## Install Ingress controller
@@ -179,11 +179,9 @@ aws eks update-kubeconfig --region us-east-1 --name prod-cluster
 kubectl get nodes -A
 
 ```
-5. Install Argo-rollouts
-follow argorollout-installation.md
+5. Install Argo Rollouts — follow [03-install-argo-rollouts.md](03-install-argo-rollouts.md)
 
-6. Install ArgoCD 
-follow argocd-installation.md
+6. Install ArgoCD — follow [02-install-argocd.md](02-install-argocd.md)
 
 6. Install Ingress 
 ```

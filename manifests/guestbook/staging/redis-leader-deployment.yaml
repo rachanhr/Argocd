@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: leader
-          image: registry.k8s.io/redis:7.0-alpine
+          image: redis:7-alpine
           ports:
             - containerPort: 6379
           resources:

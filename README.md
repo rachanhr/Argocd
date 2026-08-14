@@ -21,7 +21,15 @@ A focused curriculum for learning ArgoCD on a single EKS cluster — from cluste
 | 4 | Applications & Projects | [docs/04-applications-and-projects.md](docs/04-applications-and-projects.md) |
 | 5 | Sync & image updates | [docs/05-sync-and-image-updates.md](docs/05-sync-and-image-updates.md) |
 | 6 | RBAC (optional) | [RBAC/rbac.md](RBAC/rbac.md) |
-| — | Cleanup | [cleanup-resource.md](cleanup-resource.md) |
+| — | Cleanup | [docs/cleanup-resource.md](docs/cleanup-resource.md) |
+
+### Advanced (optional)
+
+| Topic | Guide |
+|-------|-------|
+| Canary deployment | [docs/canary-deployment.md](docs/canary-deployment.md) |
+| Blue-green deployment | [docs/blue-green-deployment.md](docs/blue-green-deployment.md) |
+| Helm deployment | [docs/helm-deployment-argocd.md](docs/helm-deployment-argocd.md) |
 
 ## Repository Layout
 
@@ -29,7 +37,7 @@ A focused curriculum for learning ArgoCD on a single EKS cluster — from cluste
 ├── cluster/
 │   └── dev-cluster.yaml          # eksctl config — auto VPC/subnets
 ├── manifests/
-│   ├── guestbook/                # dev, staging, prod manifests
+│   ├── guestbook/                # dev, staging, prod — see manifests/guestbook/README.md
 │   └── guestbook-rollout/        # Argo Rollout — progressive delivery
 ├── applications/
 │   ├── project.yaml              # AppProject definition
@@ -37,7 +45,7 @@ A focused curriculum for learning ArgoCD on a single EKS cluster — from cluste
 │   ├── guestbook-staging.yaml    # Application → staging namespace
 │   ├── guestbook-prod.yaml       # Application → prod namespace
 │   └── guestbook-rollout.yaml    # Application (Rollout)
-└── docs/                         # Step-by-step guides
+└── docs/                         # Step-by-step and advanced guides
 ```
 
 ## Quick Start
