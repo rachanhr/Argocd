@@ -6,7 +6,7 @@ metadata:
 spec:
   description: Guestbook lab project — dev, staging, prod on single cluster
   sourceRepos:
-    - https://github.com/DPP-2026/Argocd.git
+    - https://github.com/rachanhr/Argocd.git
   destinations:
     - namespace: dev
       server: https://kubernetes.default.svc
