@@ -8,7 +8,7 @@ metadata:
 spec:
   project: guestbook
   source:
-    repoURL: https://github.com/DPP-2026/Argocd.git
+    repoURL: https://github.com/rachanhr/Argocd.git
     targetRevision: main
     path: manifests/guestbook/dev
   destination:
